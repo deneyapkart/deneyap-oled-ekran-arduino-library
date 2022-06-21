@@ -1,0 +1,43 @@
+#######################################
+# Syntax Coloring Map For Deneyap_OLED
+#######################################
+
+#######################################
+# Library (KEYWORD1)
+#######################################
+
+Deneyap_OLED	KEYWORD1	Deneyap_OLED
+
+####################################
+# Class (KEYWORD1)
+####################################
+
+OLED	KEYWORD1	OLED
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+begin			KEYWORD2
+setFont			KEYWORD2
+clearDisplay		KEYWORD2
+sendCommand		KEYWORD2
+readCommand		KEYWORD2
+setBrightness		KEYWORD2
+setHorizontalMode	KEYWORD2
+setPageMode		KEYWORD2
+setTextXY		KEYWORD2
+putChar			KEYWORD2
+putString		KEYWORD2
+putString		KEYWORD2
+putNumber		KEYWORD2
+putFloat		KEYWORD2
+putFloat		KEYWORD2
+drawBitmap		KEYWORD2
+activateScroll		KEYWORD2
+deactivateScroll	KEYWORD2
+setNormalDisplay	KEYWORD2
+setInverseDisplay	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
