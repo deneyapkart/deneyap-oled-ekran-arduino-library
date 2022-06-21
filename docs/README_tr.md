@@ -40,7 +40,7 @@ Bu Arduino kütüphanesi Deneyap OLED SSD1306 0.96" 128x64 piksel siyah mavi ekr
 - Deneyap OLED Ekran modülü ile kullanılan geliştirme kartı I2C kablosu ile bağlanabilir
 - veya jumper kablolar ile 3V3, GND, SDA ve SCL bağlantıları yapılabilir.
 
-| OLED modülü | Fonksiyon| Kart pinleri |
+| OLED Ekran | Fonksiyon| Kart pinleri |
 | :---        |   :---   | :---      |
 | 3.3V        | Güç      | 3.3V      |
 | GND         | Toprak   | GND       |
