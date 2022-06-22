@@ -1,11 +1,11 @@
 /*
 *****************************************************************************
-@file        Deneyap_OLED.h
-@mainpage    Deneyap OLED Display Module based SSD1306 Library header file
-@version     v1.0.0
-@date        June 21, 2022
-@brief       This file contains all function prototypes and macros
-             for Deneyap OLED Screen module (SSD1306) library
+@file         Deneyap_OLED.h
+@mainpage     Deneyap OLED Display Module SSD1306 Arduino library header file
+@version      v1.0.1
+@date         June 22, 2022
+@brief        This file contains all function prototypes and macros
+              for Deneyap OLED Display Module SSD1306 Arduino library
 *****************************************************************************
 */
 
