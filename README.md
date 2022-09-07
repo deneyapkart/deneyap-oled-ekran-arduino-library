@@ -1,5 +1,5 @@
-# Deneyap OLED Display Module SSD1306 Arduino Library
-[FOR TURKISH VERSION](docs/README_tr.md) ![trflag](https://github.com/deneyapkart/deneyapkart-arduino-core/blob/master/docs/tr.png)
+# Deneyap OLED Display Arduino Library
+[FOR TURKISH VERSION || TÜRKÇE İÇİN TIKLAYIN](docs/README_tr.md) ![trflag](https://github.com/deneyapkart/deneyapkart-arduino-core/blob/master/docs/tr.png)
 
 ***** Add photo ****
 
@@ -7,9 +7,9 @@ Arduino library for Deneyap OLED Display Module SSD1306
 
 ## :mag_right:Specifications 
 - `Product ID` **M09**, **mpv1.0** 
-- `MCU` SSD1306 
+- `MCU` SSD1306 display
 - `Weight` 
-- `Module Dimension`
+- `Module Dimension` 25,4 mm x 38,1 mm
 - `I2C address` 0x7A, 0x78 
 
 | Address |  | 
@@ -18,13 +18,15 @@ Arduino library for Deneyap OLED Display Module SSD1306
 | 0x78 | address when ADR1 pad is shorted |
 
 ## :closed_book:Documentation
-Deneyap OLED Display Module SSD1306
+[Deneyap OLED Display](https://docs.deneyapkart.org/tr/content/contentDetail/deneyap-modul-deneyap-oled-ekran-m09)
 
-[SSD1306-datasheet](https://www.digimax.it/media_import/DISPLAY/RAYSTAR%20OPTRONICS/DISPLAY%20OLED/REX012864DWPP3N00003/REX012864DWPP3N00003_DS_001.pdf)
+[Deneyap OLED Display Mechanical Drawing](https://cdn.deneyapkart.org/media/upload/userFormUpload/wT6dViZ5y4WdwdZkzbxM9t2vsJTwDkks.pdf)
+
+[SSD1306-datasheet](https://www.wisechip.com.tw/en/product-609620/0-96%E2%80%9D-OLED-Display.html)
 
 [How to install a Arduino Library](https://docs.arduino.cc/software/ide-v1/tutorials/installing-libraries)
 
-## :pushpin:Deneyap OLED Display Module SSD1306
+## :pushpin:Deneyap OLED Display
 This Arduino library allows you to use Deneyap OLED SSD1306 0.96" 128x64 pixel black blue display module with I2C peripheral. You can print string, int, float type data with this library. You can use this library in your projects with any Arduino compatible board with I2C peripheral.
 
 ## :globe_with_meridians:Repository Contents
@@ -35,9 +37,11 @@ This Arduino library allows you to use Deneyap OLED SSD1306 0.96" 128x64 pixel b
 - `library.properties ` General library properties for the Arduino package manager
 
 ## Version History
-1.0.0 - initial release
+1.0.2 - change function name from `putNumber` to `putInt` and update text info
 
 1.0.1 - update library.properties file
+
+1.0.0 - initial release
 
 ## :rocket:Hardware Connections
 - Deneyap OLED Display module and Board can be connected with I2C cable
@@ -49,7 +53,7 @@ This Arduino library allows you to use Deneyap OLED SSD1306 0.96" 128x64 pixel b
 | GND        | Ground  | GND       |
 | SDA        | I2C Data  |SDA pin  |
 | SCL        | I2C Clock |SCL pin  |
-| NC         | no connection|         |
+| NC         | no connection||
 
 ## :bookmark_tabs:License Information
 Please review the [LICENSE](https://github.com/deneyapkart/deneyap-oled-ekran-arduino-library/blob/master/LICENSE) file for license information.

@@ -1,5 +1,5 @@
 /*
- *   Deneyap karttaki dahili IMU sensöründen Sıcaklık okuma ve buton durumunu okuyup Deneyap OLED ekrana yazdırma örneği,
+ *   Deneyap karttaki dahili IMU sensöründen Sıcaklık okuma ve buton durumunu okuyup Deneyap OLED ekranına yazdırma örneği,
  *
  *   Bu örnekte temel konfigürasyon ayarları yapılmaktadır.
  *   Saniyede bir sıcaklık değerlerini alınmaktadır.
@@ -8,46 +8,42 @@
  *
  *   Bu algılayıcı I2C haberleşme protokolü ile çalışmaktadır.
  *
- *   Bu örnek Deneyap OLED ekran modülü için oluşturulmuştur
- *      ------> www.....com <------ //docs
+ *   Bu örnek Deneyap OLED Ekran modülü için oluşturulmuştur
+ *      ------> https://docs.deneyapkart.org/tr/content/contentDetail/deneyap-modul-deneyap-oled-ekran-m09 <------
  *      ------> https://github.com/deneyapkart/deneyap-oled-ekran-arduino-library  <------
  *
- *   Bu uygulama Deneyap Kart 1A veya Deneyap Mini Kartı ile gerçekleştirilmek istenirse harici sıcaklık sensörü bağlanmalıdır ve gerekli değişiklikler yapılmalıdır.
- *
- */
+ *   Bu uygulama için başka bir Deneyap geliştirme kartı kullanılırsa harici sıcaklık sensörü bağlanmalıdır ve koddaki gerekli değişiklikler yapılmalıdır.
+*/
 
-#include <Deneyap_OLED.h>
-#include <lsm6dsm.h>
+#include <Deneyap_OLED.h>                   // Deneyap OLED Ekran kütüphanesinin eklenmesi
+#include <lsm6dsm.h>                        // IMU kütüphanesinin eklenmesi
 
-OLED OLED;                                // OLED için Class tanımlaması
-LSM6DSM IMU;                              // IMU için Class tanımlaması
+OLED OLED;                                  // OLED için class tanımlanması
+LSM6DSM IMU;                                // IMU için Class tanımlaması
 float sicaklik;
 int butonDurum;
 
-#define BUTON GPKEY                       // DENEYAP KART ve DENEYAP KART 1A geliştirme kartlarındaki dahili butonun tanımlaması
-//#define BUTON BUILTIN_KEY               // DENEYAP MİNİ geliştirme kartındaki dahili butonun tanımlaması
+#define BUTON GPKEY                         // DENEYAP geliştirme kartlarındaki dahili butonun tanımlaması
 
-void setup()
-{
-    Serial.begin(115200);                 // Seri haberlesme baslatildi
-    OLED.begin(0x7A);                     // OLED ayarlari konfigure edildi
-    IMU.begin();                          // IMU ayarlari konfigure edildi
-    OLED.clearDisplay();                  // OLED ekranına silindi
+void setup() {
+    Serial.begin(115200);                   // Seri haberleşme başlatılması
+    OLED.begin(0x7A);                       // OLED begin(slaveAdress) fonksiyonu ile cihazların haberleşmesi başlatılması
+    IMU.begin();                            // IMU begin(slaveAdress) fonksiyonu ile cihazların haberleşmesi başlatılması
+    OLED.clearDisplay();                    // OLED ekrandaki verilerin silinmesi
     pinMode(BUTON, INPUT);
 }
 
-void loop()
-{
-    sicaklik = IMU.readTempC();           // Sıcaklık değeri alınması
-    OLED.setTextXY(3, 0);                 // OLED satır sutun ayarlanması
-    OLED.putString("Sicaklik: ");         // OLED ekrana string türünde ekrana yazı yazdırma
+void loop() {
+    sicaklik = IMU.readTempC();             // Sıcaklık değeri alınması
+    OLED.setTextXY(3, 0);                   // OLED satır sütun ayarlanması
+    OLED.putString("Sicaklik: ");           // OLED ekrana string türünde ekrana yazı yazdırılması
     OLED.setTextXY(3, 10);
-    OLED.putFloat(sicaklik);              // OLED ekrana float türünde ekrana yazı yazdırma
+    OLED.putFloat(sicaklik);                // OLED ekrana float türünde ekrana yazı yazdırılması
 
-    int butonDurum = digitalRead(BUTON);  // Buton durumunun alınması
+    int butonDurum = digitalRead(BUTON);    // Buton durumunun alınması
     OLED.setTextXY(5, 0);
     OLED.putString("Buton Durumu:");
     OLED.setTextXY(5, 14);
-    OLED.putNumber(butonDurum);           // OLED ekrana int türünde ekrana yazı yazdırma
+    OLED.putInt(butonDurum);                // OLED ekrana int türünde ekrana yazı yazdırılması
     delay(1000);
 }

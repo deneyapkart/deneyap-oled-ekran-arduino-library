@@ -3,8 +3,8 @@
 @file         Deneyap_OLED.cpp
 @mainpage     Deneyap OLED Display Module SSD1306 Arduino library source file
 @maintainer   RFtek Electronics <techsupport@rftek.com.tr>
-@version      v1.0.1
-@date         June 22, 2022
+@version      v1.0.2
+@date         September 07, 2022
 @brief        Includes functions to control Deneyap OLED Display Module SSD1306
               Arduino library
 
@@ -91,8 +91,7 @@ void OLED::clearDisplay() {
     unsigned char i, j;
     sendCommand(SSD1306_Display_Off_Cmd); // display off
     for (j = 0; j < 8; j++) {
-        setTextXY(j, 0);
-        {
+        setTextXY(j, 0); {
             for (i = 0; i < 16; i++) { // clear all columns
                 putChar(' ');
             }
@@ -163,8 +162,7 @@ void OLED::setPageMode() {
  * @param
  * @retval
  **/
-void OLED::setTextXY(unsigned char row, unsigned char col)
-{
+void OLED::setTextXY(unsigned char row, unsigned char col) {
     sendCommand(0xB0 + row);                                // set page address
     sendCommand(0x00 + (m_font_width * col & 0x0F));        // set column lower addr
     sendCommand(0x10 + ((m_font_width * col >> 4) & 0x0F)); // set column higher addr
@@ -197,7 +195,8 @@ bool OLED::putChar(unsigned char ch) {
  **/
 void OLED::putString(const char *string) {
     unsigned char i = 0;
-    while (string[i]) {
+    while (string[i])
+    {
         putChar(string[i]);
         i++;
     }
@@ -219,7 +218,7 @@ void OLED::putString(String string) {
  * @param
  * @retval
  **/
-unsigned char OLED::putNumber(long long_num) {
+unsigned char OLED::putInt(long long_num) {
     unsigned char char_buffer[10] = "";
     unsigned char i = 0;
     unsigned char f = 0;
@@ -268,21 +267,22 @@ unsigned char OLED::putFloat(float floatNumber, unsigned char decimal) {
     floatNumber += rounding;
 
     temp = floatNumber;
-    f += putNumber(temp);
+    f += putInt(temp);
     if (decimal > 0) {
         putChar('.');
         f += 1;
     }
-    decy = floatNumber - temp;                  // decimal part,
-    for (unsigned char i = 0; i < decimal; i++) {  // 4 
+    decy = floatNumber - temp; // decimal part,
+    for (unsigned char i = 0; i < decimal; i++) {   // 4
         decy *= 10;  // for the next decimal
         temp = decy; // get the decimal
-        putNumber(temp);
+        putInt(temp);
         decy -= temp;
     }
     f += decimal;
     return f;
 }
+
 /**
  * @brief
  * @param
@@ -305,21 +305,22 @@ unsigned char OLED::putFloat(float floatNumber) {
     floatNumber += rounding;
 
     temp = floatNumber;
-    f += putNumber(temp);
+    f += putInt(temp);
     if (decimal > 0) {
         putChar('.');
         f += 1;
     }
-    decy = floatNumber - temp;                  // decimal part,
-    for (unsigned char i = 0; i < decimal; i++) { // 4 
+    decy = floatNumber - temp; // decimal part,
+    for (unsigned char i = 0; i < decimal; i++) {   // 4
         decy *= 10;  // for the next decimal
         temp = decy; // get the decimal
-        putNumber(temp);
+        putInt(temp);
         decy -= temp;
     }
     f += decimal;
     return f;
 }
+
 /**
  * @brief
  * @param

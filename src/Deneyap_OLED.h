@@ -2,8 +2,8 @@
 *****************************************************************************
 @file         Deneyap_OLED.h
 @mainpage     Deneyap OLED Display Module SSD1306 Arduino library header file
-@version      v1.0.1
-@date         June 22, 2022
+@version      v1.0.2
+@date         September 07, 2022
 @brief        This file contains all function prototypes and macros
               for Deneyap OLED Display Module SSD1306 Arduino library
 *****************************************************************************
@@ -21,34 +21,34 @@
 #include "fonts/font5x7.h"
 
 #if defined SSD1306_128_64
-#define SSD1306_Max_X                127 // 0x7F
-#define SSD1306_Max_Y                63  // 0x3F
+#define SSD1306_Max_X 127 // 0x7F
+#define SSD1306_Max_Y 63  // 0x3F
 #endif
 
-#define PAGE_MODE                    01
-#define HORIZONTAL_MODE              02
+#define PAGE_MODE 01
+#define HORIZONTAL_MODE 02
 
-#define SSD1306_Command_Mode         0x80
-#define SSD1306_Data_Mode            0x40
-#define SSD1306_Display_Off_Cmd      0xAE
-#define SSD1306_Display_On_Cmd       0xAF
-#define SSD1306_Normal_Display_Cmd   0xA6
-#define SSD1306_Inverse_Display_Cmd  0xA7
-#define SSD1306_Activate_Scroll_Cmd  0x2F
+#define SSD1306_Command_Mode 0x80
+#define SSD1306_Data_Mode 0x40
+#define SSD1306_Display_Off_Cmd 0xAE
+#define SSD1306_Display_On_Cmd 0xAF
+#define SSD1306_Normal_Display_Cmd 0xA6
+#define SSD1306_Inverse_Display_Cmd 0xA7
+#define SSD1306_Activate_Scroll_Cmd 0x2F
 #define SSD1306_Dectivate_Scroll_Cmd 0x2E
-#define SSD1306_Set_Brightness_Cmd   0x81
+#define SSD1306_Set_Brightness_Cmd 0x81
 
-#define Scroll_Left                  0x00
-#define Scroll_Right                 0x01
+#define Scroll_Left 0x00
+#define Scroll_Right 0x01
 
-#define Scroll_2Frames               0x7
-#define Scroll_3Frames               0x4
-#define Scroll_4Frames               0x5
-#define Scroll_5Frames               0x0
-#define Scroll_25Frames              0x6
-#define Scroll_64Frames              0x1
-#define Scroll_128Frames             0x2
-#define Scroll_256Frames             0x3
+#define Scroll_2Frames 0x7
+#define Scroll_3Frames 0x4
+#define Scroll_4Frames 0x5
+#define Scroll_5Frames 0x0
+#define Scroll_25Frames 0x6
+#define Scroll_64Frames 0x1
+#define Scroll_128Frames 0x2
+#define Scroll_256Frames 0x3
 
 class OLED {
 
@@ -66,7 +66,7 @@ public:
     bool putChar(unsigned char c);
     void putString(const char *string);
     void putString(String string);
-    unsigned char putNumber(long n);
+    unsigned char putInt(long n);
     unsigned char putFloat(float floatNumber, unsigned char decimal);
     unsigned char putFloat(float floatNumber);
     void drawBitmap(unsigned char *bitmaparray, int bytes);

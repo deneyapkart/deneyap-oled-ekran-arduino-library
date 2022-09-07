@@ -1,5 +1,5 @@
 /*
- *   Deneyap OLED ekrana Taş Kağıt Makas örneği,
+ *   Deneyap OLED ekranına Taş Kağıt Makas örneği,
  *
  *   Bu örnekte temel konfigürasyon ayarları yapılmaktadır.
  *   Deneyap OLED ekranda sırasıyla taş, kağıt, makas yazıları ve işaretleri yazmaktadır. Daha sonra ekranda "oyun basliyor" yazmaktadır.
@@ -8,52 +8,50 @@
  *
  *   Bu algılayıcı I2C haberleşme protokolü ile çalışmaktadır.
  *
- *   Bu örnek Deneyap OLED ekran modülü için oluşturulmuştur
- *      ------> www.....com <------ //docs
+ *   Bu örnek Deneyap OLED Ekran modülü için oluşturulmuştur
+ *      ------> https://docs.deneyapkart.org/tr/content/contentDetail/deneyap-modul-deneyap-oled-ekran-m09 <------
  *      ------> https://github.com/deneyapkart/deneyap-oled-ekran-arduino-library  <------
- *
- */
+*/
 
-#include <Deneyap_OLED.h>
+#include <Deneyap_OLED.h>                   // Deneyap OLED Ekran kütüphanesinin eklenmesi
 
-OLED OLED;                           // OLED için Class tanımlaması
+OLED OLED;                                  // OLED için class tanımlanması
 
-void TAS();                          // TAS fonksiyonun prototip tanımlanması
-void KAGIT();                        // KAGIT fonksiyonun prototip tanımlanması
-void MAKAS();                        // MAKAS fonksiyonun prototip tanımlanması
+void TAS();                                 // TAS fonksiyonun prototip tanımlanması
+void KAGIT();                               // KAGIT fonksiyonun prototip tanımlanması
+void MAKAS();                               // MAKAS fonksiyonun prototip tanımlanması
 
 void setup() {
-    Serial.begin(115200);            // Seri haberlesme baslatildi
-    OLED.begin(0x7A);                // OLED ayarlari konfigure edildi
-    OLED.clearDisplay();             // OLED ekranı silindi
+    Serial.begin(115200);                   // Seri haberleşme başlatılması
+    OLED.begin(0x7A);                       // begin(slaveAdress) fonksiyonu ile cihazların haberleşmesi başlatılması
+    OLED.clearDisplay();                    // OLED ekrandaki verilerin silinmesi
 
-    TAS();                           // TAS fonksiyonu calistirilmasi
-    delay(1000);                     // 1 saniye bekleme
-    KAGIT();                         // KAGIT fonksiyonu calistirilmasi
+    TAS();                                  // TAS fonksiyonu çalıştırılması
+    delay(1000);                            // 1 saniye bekleme
+    KAGIT();                                // KAGIT fonksiyonu çalıştırılması
     delay(1000);
-    MAKAS();                         // MAKAS fonksiyonu calistirilmasi
+    MAKAS();                                // MAKAS fonksiyonu çalıştırılması
     delay(1000);
 
     OLED.clearDisplay();
-    OLED.setTextXY(3, 1);            // OLED satır sutun ayarlanması
-    OLED.putString("Oyun basliyor"); // OLED ekrana string türünde ekrana yazı yazdırma
+    OLED.setTextXY(3, 1);                   // OLED satır sütun ayarlanması
+    OLED.putString("Oyun basliyor");        // OLED ekrana string türünde ekrana yazı yazdırılması
     delay(500);
 }
 
 void loop() {
-
-    int randNumber = random(1, 4);  // 1'den 3 kadar random sayısı atamasi yapiliyor
-    Serial.println(randNumber);     // Random sayi ekrana yazdirildi
+    int randNumber = random(1, 4);          // 1'den 3 kadar random sayısı ataması yapılıyor
+    Serial.println(randNumber);             // Random sayı ekrana yazdırıldı
 
     switch (randNumber) {
-    case 1:                         // Random sayi 1 ise
-        TAS();                      // TAS fonksiyonunu calistir
+    case 1:                                 // Random sayı 1 ise
+        TAS();                              // TAS fonksiyonunu çalıştır
+        break; 
+    case 2:                                 // Random sayı 2 ise
+        KAGIT();                            // KAGIT fonksiyonunu çalıştır
         break;
-    case 2:                         // Random sayi 2 ise
-        KAGIT();                    // KAGIT fonksiyonunu calistir
-        break;
-    case 3:                         // Random sayi 3 ise
-        MAKAS();                    // MAKAS fonksiyonunu calistir
+    case 3:                                 // Random sayı 3 ise
+        MAKAS();                            // MAKAS fonksiyonunu çalıştır
         break;
     }
     delay(1500);
@@ -64,7 +62,7 @@ void loop() {
 }
 
 /*
- * Ekrana TAS ve taş işareti yazdırır
+ * OLED ekranına TAS ve taş işareti yazdırır
  */
 void TAS() {
     OLED.setTextXY(0, 0);
@@ -86,7 +84,7 @@ void TAS() {
 }
 
 /*
- * Ekrana KAGIT ve kağıt işareti yazdırır
+ * OLED ekranına KAGIT ve kağıt işareti yazdırır
  */
 void KAGIT() {
     OLED.setTextXY(0, 0);
@@ -108,7 +106,7 @@ void KAGIT() {
 }
 
 /*
- * Ekrana MAKAS ve makas işareti yazdırır
+ * OLED ekranına MAKAS ve makas işareti yazdırır
  */
 void MAKAS() {
     OLED.setTextXY(0, 0);

@@ -29,7 +29,7 @@ setTextXY		KEYWORD2
 putChar			KEYWORD2
 putString		KEYWORD2
 putString		KEYWORD2
-putNumber		KEYWORD2
+putInt		KEYWORD2
 putFloat		KEYWORD2
 putFloat		KEYWORD2
 drawBitmap		KEYWORD2
