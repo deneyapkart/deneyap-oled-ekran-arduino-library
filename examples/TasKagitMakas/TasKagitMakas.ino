@@ -1,18 +1,16 @@
 /*
- *   Deneyap OLED ekranına Taş Kağıt Makas örneği,
- *
+ *   TasKagitMakas örneği,
  *   Bu örnekte temel konfigürasyon ayarları yapılmaktadır.
  *   Deneyap OLED ekranda sırasıyla taş, kağıt, makas yazıları ve işaretleri yazmaktadır. Daha sonra ekranda "oyun basliyor" yazmaktadır.
  *   Birden üçe kadar random sayı ataması yapılmaktadır. Random sayı 1 ise taş, 2 ise kağıt, 3 ise makas ekrana yazdırmaktadır.
  *   Oyun 1500 milisaniyede bir ekranda "tekrar" yazdırarak döngü içinde devam etmektedir.
  *
- *   Bu algılayıcı I2C haberleşme protokolü ile çalışmaktadır.
+ *   Bu ekran I2C haberleşme protokolü ile çalışmaktadır.
  *
  *   Bu örnek Deneyap OLED Ekran modülü için oluşturulmuştur
  *      ------> https://docs.deneyapkart.org/tr/content/contentDetail/deneyap-modul-deneyap-oled-ekran-m09 <------
  *      ------> https://github.com/deneyapkart/deneyap-oled-ekran-arduino-library  <------
 */
-
 #include <Deneyap_OLED.h>                   // Deneyap OLED Ekran kütüphanesinin eklenmesi
 
 OLED OLED;                                  // OLED için class tanımlanması

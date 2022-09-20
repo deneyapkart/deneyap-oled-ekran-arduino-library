@@ -8,7 +8,7 @@ Arduino library for Deneyap OLED Display Module SSD1306
 ## :mag_right:Specifications 
 - `Product ID` **M09**, **mpv1.0** 
 - `MCU` SSD1306 display
-- `Weight` 
+- `Weight`
 - `Module Dimension` 25,4 mm x 38,1 mm
 - `I2C address` 0x7A, 0x78 
 
@@ -27,7 +27,7 @@ Arduino library for Deneyap OLED Display Module SSD1306
 [How to install a Arduino Library](https://docs.arduino.cc/software/ide-v1/tutorials/installing-libraries)
 
 ## :pushpin:Deneyap OLED Display
-This Arduino library allows you to use Deneyap OLED SSD1306 0.96" 128x64 pixel black blue display module with I2C peripheral. You can print string, int, float type data with this library. You can use this library in your projects with any Arduino compatible board with I2C peripheral.
+This Arduino library allows you to use Deneyap OLED SSD1306 0.96" 128x64 pixel black blue display module with I2C peripheral. You can use this library in your projects with any Arduino compatible board with I2C peripheral.
 
 ## :globe_with_meridians:Repository Contents
 - `/docs ` README_tr.md and product photos
@@ -37,6 +37,8 @@ This Arduino library allows you to use Deneyap OLED SSD1306 0.96" 128x64 pixel b
 - `library.properties ` General library properties for the Arduino package manager
 
 ## Version History
+1.0.3 - update function(`begin`), add new functions(`init`, `setHorizontalScrollProperties`) and sketches(`EkranParlakligiDegistirme`, `KayanYazi`, `T3Logo`)
+
 1.0.2 - change function name from `putNumber` to `putInt` and update text info
 
 1.0.1 - update library.properties file

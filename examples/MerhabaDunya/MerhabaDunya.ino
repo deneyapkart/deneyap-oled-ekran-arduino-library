@@ -1,27 +1,23 @@
 /*
- *   Deneyap OLED ekranına Merhaba Dunya yazdırma örneği,
- *
+ *   MerhabaDunya örneği,
  *   Bu örnekte temel konfigürasyon ayarları yapılmaktadır.
  *   Deneyap OLED ekranını 2.satırına Merhaba Dunya!
  *   4.satır 5.sutununa OLED
  *   5.satır 5.sutununa EKRAN yazdırmaktadır.
  *
- *   Bu algılayıcı I2C haberleşme protokolü ile çalışmaktadır.
+ *   Bu ekran I2C haberleşme protokolü ile çalışmaktadır.
  *
  *   Bu örnek Deneyap OLED Ekran modülü için oluşturulmuştur
  *      ------> https://docs.deneyapkart.org/tr/content/contentDetail/deneyap-modul-deneyap-oled-ekran-m09 <------
  *      ------> https://github.com/deneyapkart/deneyap-oled-ekran-arduino-library  <------
 */
-
 #include <Deneyap_OLED.h>               // Deneyap OLED Ekran kütüphanesinin eklenmesi
 
 OLED OLED;                              // OLED için class tanımlanması
 
 void setup() {
-    Serial.begin(115200);               // Seri haberleşme başlatılması
     OLED.begin(0x7A);                   // begin(slaveAdress) fonksiyonu ile cihazların haberleşmesi başlatılması
     OLED.clearDisplay();                // OLED ekrandaki verilerin silinmesi
-
     OLED.setTextXY(0, 0);               // Satır ve sütun ayarlanması
     OLED.putString("****************");
     OLED.setTextXY(2, 0);

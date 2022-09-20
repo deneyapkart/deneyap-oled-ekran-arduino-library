@@ -26,7 +26,7 @@ Deneyap OLED Ekran için Arduino kütüphanesidir.
 [Arduino IDE'de Kütüphane Nasıl İndirilir](https://docs.arduino.cc/software/ide-v1/tutorials/installing-libraries)
 
 ## :pushpin:Deneyap OLED Ekran
-Bu Arduino kütüphanesi Deneyap OLED SSD1306 0.96" 128x64 piksel siyah mavi ekran modulünün I2C çevre birimi ile kullanılmasını sağlar. String, int, float tipi verileri yazdırabilirsiniz. Arduino ile uyumlu, I2C çevre birimine sahip herhangi bir geliştirme kartı ile bu kütüphaneyi projelerinizde kullanabilirsiniz.
+Bu Arduino kütüphanesi Deneyap OLED SSD1306 0.96" 128x64 piksel siyah mavi ekran modulünün I2C çevre birimi ile kullanılmasını sağlar. Arduino ile uyumlu, I2C çevre birimine sahip herhangi bir geliştirme kartı ile bu kütüphaneyi projelerinizde kullanabilirsiniz.
 
 ## :globe_with_meridians:Repo İçeriği
 - `/docs` README_tr.md ve ürün fotoğrafları
@@ -36,6 +36,8 @@ Bu Arduino kütüphanesi Deneyap OLED SSD1306 0.96" 128x64 piksel siyah mavi ekr
 - `library.properties` Arduino yöneticisi için genel kütüphane özellikleri
 
 ## Sürüm Geçmişi
+1.0.3 - fonksiyonlar güncellendi(`begin`), yeni fonksiyonlar(`init`, `setHorizontalScrollProperties`) ve örnekler(`EkranParlakligiDegistirme`, `KayanYazi`, `T3Logo`) eklendi
+
 1.0.2 - `putNumber` fonksiyon ismi `putInt` olarak değiştirildi ve metin bilgileri güncellendi
 
 1.0.1 - library.properties dosyasının güncellenmesi
